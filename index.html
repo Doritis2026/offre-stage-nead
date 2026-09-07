@@ -3,176 +3,355 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Offre de stage - Assistante de Direction Bilingue | NEAD_HOLDING">
-  <title>Nous Recrutons — Assistante de Direction Bilingue</title>
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Offre de stage - Assistante de Direction Bilingue - NEAD_HOLDING">
+  <title>Stage — Assistante de Direction Bilingue | NEAD_HOLDING</title>
+  <style>
+    :root{
+      --navy:#061a3a;
+      --navy2:#092a5a;
+      --blue:#0b4fa3;
+      --orange:#ff7a00;
+      --orange2:#ff9800;
+      --white:#ffffff;
+      --text:#15233a;
+      --muted:#667085;
+      --line:#e7edf5;
+      --soft:#f5f8fc;
+      --shadow:0 20px 55px rgba(4,24,55,.16);
+      --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    .topbar{
+      background:var(--navy);
+      color:#fff;
+      font-size:.9rem;
+      padding:9px 0;
+    }
+    .topbar .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(10,42,86,.08);
+    }
+    nav{
+      min-height:76px;display:flex;align-items:center;
+      justify-content:space-between;gap:25px;
+    }
+    .brand{display:flex;align-items:center;font-weight:800}
+    .brand-logo{width:190px;height:62px;object-fit:contain;object-position:left center;display:block}
+
+    .navlinks{display:flex;gap:24px;color:#394b65;font-weight:600;font-size:.94rem}
+    .navlinks a:hover{color:var(--orange)}
+    .nav-cta{
+      background:var(--orange);color:#111;padding:12px 20px;border-radius:999px;
+      font-weight:800;box-shadow:0 8px 22px rgba(255,122,0,.25)
+    }
+
+    .hero{
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 82% 25%,rgba(35,119,230,.32),transparent 28%),
+        radial-gradient(circle at 10% 85%,rgba(255,122,0,.18),transparent 25%),
+        linear-gradient(135deg,var(--navy),#0a3670 62%,#061a3a);
+      color:#fff;
+    }
+    .hero:after{
+      content:"";position:absolute;inset:auto -10% -180px;
+      height:330px;background:rgba(255,255,255,.04);
+      transform:rotate(-5deg);
+    }
+    .hero-grid{
+      min-height:660px;display:grid;grid-template-columns:1.15fr .85fr;
+      align-items:center;gap:45px;padding:75px 0 90px;position:relative;z-index:1;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:9px;background:var(--orange);
+      color:#111;padding:8px 15px;border-radius:999px;font-weight:900;
+      letter-spacing:.4px;margin-bottom:20px;
+    }
+    h1{font-size:clamp(2.7rem,6vw,5.2rem);line-height:.98;letter-spacing:-3px;margin-bottom:20px}
+    h1 span{color:var(--orange)}
+    .hero h2{font-size:clamp(1.15rem,2vw,1.65rem);font-weight:800;margin-bottom:16px}
+    .hero p.lead{font-size:1.12rem;color:#dbe8fb;max-width:700px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:15px 24px;border-radius:12px;font-weight:900;transition:.2s;
+    }
+    .btn-primary{background:var(--orange);color:#101010;box-shadow:0 12px 28px rgba(255,122,0,.25)}
+    .btn-primary:hover{transform:translateY(-2px);background:var(--orange2)}
+    .btn-light{border:1px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.08)}
+    .hero-card{
+      background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
+      border-radius:28px;padding:28px;box-shadow:var(--shadow);backdrop-filter:blur(10px)
+    }
+    .chair{
+      height:290px;border-radius:25px;
+      background:
+        radial-gradient(circle at 50% 34%,#164e9a 0 16%,transparent 17%),
+        linear-gradient(145deg,#071a37,#123d78);
+      position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;
+      margin-bottom:20px;border:1px solid rgba(255,255,255,.12)
+    }
+    .chair:before{
+      content:"N";font-size:180px;font-weight:1000;color:rgba(255,255,255,.06);
+      position:absolute;right:25px;bottom:-40px;
+    }
+    .logo-display{background:#fff;display:flex;align-items:center;justify-content:center;padding:28px}
+    .logo-display img{width:min(330px,85%);height:auto;display:block}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .mini{background:rgba(0,0,0,.16);padding:14px;border-radius:14px}
+    .mini b{display:block;color:var(--orange);font-size:.78rem;text-transform:uppercase}
+    .mini span{font-weight:800}
+
+    section{padding:82px 0}
+    .section-head{max-width:720px;margin-bottom:38px}
+    .eyebrow{color:var(--orange);font-weight:900;text-transform:uppercase;letter-spacing:1.4px;font-size:.82rem}
+    h2.section-title{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;margin:8px 0 12px;color:var(--navy)}
+    .section-head p{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+      padding:28px;box-shadow:0 12px 35px rgba(8,30,62,.06)
+    }
+    .icon{
+      width:48px;height:48px;border-radius:14px;background:#fff1e5;color:var(--orange);
+      display:grid;place-items:center;font-size:1.3rem;font-weight:900;margin-bottom:18px
+    }
+    .card h3{margin-bottom:9px;color:var(--navy)}
+    .card p{color:var(--muted)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
+    .panel{
+      border-radius:var(--radius);padding:34px;background:var(--soft);border:1px solid var(--line)
+    }
+    .panel.dark{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .panel h3{font-size:1.45rem;margin-bottom:20px}
+    ul.clean{list-style:none;display:grid;gap:13px}
+    ul.clean li{position:relative;padding-left:30px}
+    ul.clean li:before{
+      content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;
+      border-radius:50%;background:var(--orange);color:#111;display:grid;place-items:center;
+      font-size:.75rem;font-weight:900
+    }
+    .dark ul.clean li:before{color:#111}
+    .qualities{display:flex;flex-wrap:wrap;gap:9px}
+    .tag{padding:9px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:700}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .step{padding:25px;border:1px solid var(--line);border-radius:18px;position:relative}
+    .number{font-size:2.3rem;font-weight:1000;color:var(--orange);line-height:1;margin-bottom:12px}
+    .apply{
+      background:linear-gradient(135deg,var(--navy),#0b3c7c);
+      color:#fff;border-radius:30px;padding:55px;display:grid;
+      grid-template-columns:1.2fr .8fr;gap:35px;align-items:center;
+      box-shadow:var(--shadow)
+    }
+    .apply h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.05;margin:8px 0 15px}
+    .apply p{color:#d6e3f5}
+    .deadline{
+      background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
+      padding:25px;border-radius:20px
+    }
+    .deadline strong{display:block;color:var(--orange);font-size:2rem}
+    footer{background:#031127;color:#aebbd0;padding:35px 0}
+    footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer b{color:#fff}
+
+    @media(max-width:850px){
+      .navlinks{display:none}
+      .hero-grid,.split,.apply{grid-template-columns:1fr}
+      .hero-grid{padding:60px 0 75px}
+      .cards{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:520px){
+      h1{letter-spacing:-1.8px}
+      .hero-card{padding:18px}
+      .info-grid,.process{grid-template-columns:1fr}
+      section{padding:62px 0}
+      .apply{padding:32px 24px}
+      .nav-cta{padding:10px 14px;font-size:.88rem}
+    }
+  </style>
 </head>
 <body>
+  <div class="topbar">
+    <div class="container">
+      <span>NEAD_HOLDING — Opportunité professionnelle</span>
+      <span>📍 Togo</span>
+    </div>
+  </div>
 
-  <header class="site-header">
-    <div class="container nav">
-      <a href="#accueil" class="brand" aria-label="NEAD_HOLDING">
-        <img src="assets/logo.svg" alt="NEAD_HOLDING">
-      </a>
-      <a href="#candidature" class="nav-cta">Postuler</a>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="brand" aria-label="NEAD_HOLDING">
+          <img class="brand-logo" src="logo.svg" alt="NEAD_HOLDING">
+        </a>
+        <div class="navlinks">
+          <a href="#mission">Missions</a>
+          <a href="#profil">Profil</a>
+          <a href="#process">Candidature</a>
+        </div>
+        <a class="nav-cta" href="https://forms.gle/bZFgwbyGFmv2ASC79" target="_blank" rel="noopener">Postuler</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section id="accueil" class="hero">
-      <div class="hero-glow glow-one"></div>
-      <div class="hero-glow glow-two"></div>
+    <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">OPPORTUNITÉ PROFESSIONNELLE</span>
-          <h1><span>Nous</span><br>Recrutons</h1>
-          <h2>ASSISTANTE DE DIRECTION BILINGUE</h2>
-          <p class="hero-intro">
-            Formation en Assistanat de Direction, Secrétariat, Gestion,
-            Administration ou domaine similaire.
+        <div>
+          <div class="badge">🚀 NOUS RECRUTONS</div>
+          <h1>Assistante de<br><span>Direction</span> Bilingue</h1>
+          <h2>Un stage pour développer votre expérience en entreprise.</h2>
+          <p class="lead">
+            Vous êtes formé(e) en Assistanat de Direction, Secrétariat, Gestion,
+            Administration ou dans un domaine similaire ? Rejoignez-nous et
+            mettez vos compétences en pratique dans un environnement professionnel.
           </p>
           <div class="hero-actions">
-            <a href="#candidature" class="btn btn-primary">Postulez maintenant <span>→</span></a>
-            <a href="#offre" class="btn btn-outline">Découvrir l'offre</a>
+            <a class="btn btn-primary" href="https://forms.gle/bZFgwbyGFmv2ASC79" target="_blank" rel="noopener">Postuler maintenant →</a>
+            <a class="btn btn-light" href="#mission">Voir les missions</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="chair logo-display"><img src="logo.svg" alt="Logo NEAD_HOLDING"></div>
+          <div class="info-grid">
+            <div class="mini"><b>Date limite</b><span>16 septembre 2026</span></div>
+            <div class="mini"><b>Type</b><span>Stage professionnel</span></div>
+            <div class="mini"><b>Domaine</b><span>Administration</span></div>
+            <div class="mini"><b>Disponibilité</b><span>Immédiate / selon accord</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Le poste</div>
+          <h2 class="section-title">Une expérience concrète au cœur de la Direction</h2>
+          <p>
+            Le stage permet de participer aux activités administratives et
+            commerciales quotidiennes tout en développant des compétences
+            professionnelles directement applicables.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Assister la Direction</h3>
+            <p>Accompagner la Direction dans ses tâches quotidiennes et contribuer à la bonne organisation de ses activités.</p>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Gérer les documents</h3>
+            <p>Préparer, classer et organiser les documents administratifs avec rigueur et discrétion.</p>
+          </article>
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Suivi administratif & commercial</h3>
+            <p>Participer aux devis, factures, courriers, dossiers d’appels d’offres et au suivi des paiements.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="profil" style="background:#f8fafc">
+      <div class="container">
+        <div class="split">
+          <div class="panel dark">
+            <div class="eyebrow">Profil recherché</div>
+            <h3>Votre profil nous intéresse si vous êtes…</h3>
+            <ul class="clean">
+              <li>Bonne maîtrise du français et de l’anglais</li>
+              <li>À l’aise avec Word & Excel</li>
+              <li>Doté(e) d’une bonne capacité rédactionnelle</li>
+              <li>Organisé(e), rigoureux(se) et discret(e)</li>
+              <li>À l’aise avec la recherche et le montage de dossiers d’appels d’offres</li>
+              <li>Ayant des notions en devis, facturation et suivi des paiements</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="eyebrow">Qualités recherchées</div>
+            <h3>Les qualités qui feront la différence</h3>
+            <div class="qualities">
+              <span class="tag">Rigueur</span>
+              <span class="tag">Organisation</span>
+              <span class="tag">Discrétion</span>
+              <span class="tag">Réactivité</span>
+              <span class="tag">Autonomie</span>
+              <span class="tag">Esprit d’initiative</span>
+            </div>
+            <br>
+            <p style="color:#667085">
+              Avoir le permis ou un moyen de déplacement constitue un atout.
+              La disponibilité au même moment que l’équipe est également importante.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Comment postuler</div>
+          <h2 class="section-title">Un processus simple</h2>
+          <p>Préparez votre candidature et envoyez-la avant la date limite.</p>
+        </div>
+        <div class="process">
+          <div class="step"><div class="number">01</div><h3>Préparez</h3><p>Votre CV et les informations demandées.</p></div>
+          <div class="step"><div class="number">02</div><h3>Postulez</h3><p>Cliquez sur le bouton et remplissez le formulaire.</p></div>
+          <div class="step"><div class="number">03</div><h3>Échangez</h3><p>Les profils présélectionnés seront contactés.</p></div>
+          <div class="step"><div class="number">04</div><h3>Intégrez</h3><p>Commencez votre expérience professionnelle.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="postuler" style="padding-top:20px">
+      <div class="container">
+        <div class="apply">
+          <div>
+            <div class="eyebrow">Votre prochaine étape</div>
+            <h2>Prêt(e) à rejoindre l’aventure ?</h2>
+            <p>
+              Cliquez sur le bouton ci-dessous pour accéder au formulaire de candidature.
+              La date limite de candidature est fixée au <strong>16 septembre 2026</strong>.
+            </p>
+            <a class="btn btn-primary" href="https://forms.gle/bZFgwbyGFmv2ASC79" target="_blank" rel="noopener">
+              Je postule maintenant →
+            </a>
           </div>
           <div class="deadline">
-            <span>DATE LIMITE</span>
-            <strong>16 SEPTEMBRE 2026</strong>
+            <span>Date limite de candidature</span>
+            <strong>16/09/2026</strong>
+            <span>📧 infos.doritis@gmail.com</span><br>
+            <span>📞 +228 99 88 17 74</span>
           </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="visual-ring"></div>
-          <div class="office-card">
-            <div class="chair">
-              <div class="headrest"></div>
-              <div class="backrest"></div>
-              <div class="seat"></div>
-              <div class="arm arm-left"></div>
-              <div class="arm arm-right"></div>
-              <div class="base"></div>
-            </div>
-            <div class="floating-tag">
-              <b>STAGE</b>
-              <small>Une opportunité pour évoluer</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="offre" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <span class="section-kicker">LE PROFIL</span>
-          <h2>Ce que nous recherchons</h2>
-          <p>Un profil organisé, rigoureux et capable d'évoluer dans un environnement professionnel dynamique.</p>
-        </div>
-
-        <div class="cards two-cols">
-          <article class="info-card">
-            <div class="card-icon">✓</div>
-            <h3>Profil recherché</h3>
-            <ul>
-              <li>Bonne maîtrise du <b>français</b> et de <b>l'anglais</b></li>
-              <li>Maîtrise de Word &amp; Excel</li>
-              <li>Bonne capacité rédactionnelle</li>
-              <li>Organisation et rigueur</li>
-              <li>Notions en recherche et montage de dossiers d'appels d'offres</li>
-              <li>Notions en devis, facturation et suivi des paiements</li>
-            </ul>
-          </article>
-
-          <article class="info-card">
-            <div class="card-icon">↗</div>
-            <h3>Missions principales</h3>
-            <ul>
-              <li>Assister la Direction dans ses tâches quotidiennes</li>
-              <li>Préparer et classer les documents administratifs</li>
-              <li>Participer au montage des dossiers d'appels d'offres</li>
-              <li>Préparer devis et factures</li>
-              <li>Assurer le suivi administratif et commercial</li>
-              <li>Rédiger des courriers et documents professionnels</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="quality-box">
-          <div>
-            <span class="section-kicker">QUALITÉS RECHERCHÉES</span>
-            <h3>Le savoir-être compte aussi.</h3>
-          </div>
-          <div class="qualities">
-            <span>Rigueur</span><i>•</i>
-            <span>Organisation</span><i>•</i>
-            <span>Discrétion</span><i>•</i>
-            <span>Réactivité</span><i>•</i>
-            <span>Autonomie</span><i>•</i>
-            <span>Esprit d'initiative</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section dark-section">
-      <div class="container detail-grid">
-        <div>
-          <span class="section-kicker">INFORMATIONS</span>
-          <h2>Une candidature simple et rapide.</h2>
-          <p>
-            Prenez quelques minutes pour compléter le formulaire de candidature.
-            Les profils correspondant aux critères seront contactés pour la suite du processus.
-          </p>
-        </div>
-        <div class="detail-list">
-          <div><span>📅</span><div><b>Date limite</b><small>16 septembre 2026</small></div></div>
-          <div><span>📍</span><div><b>Disponibilité</b><small>Être disponible selon les exigences du stage</small></div></div>
-          <div><span>🚗</span><div><b>Déplacement</b><small>Avoir le permis ou un moyen de déplacement est un atout.</small></div></div>
-          <div><span>✉</span><div><b>Contact</b><small>infos.doritis@gmail.com</small></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="candidature" class="section application-section">
-      <div class="container application-grid">
-        <div class="application-intro">
-          <span class="section-kicker">CANDIDATURE</span>
-          <h2>Prêt(e) à postuler ?</h2>
-          <p>
-            Cliquez sur le bouton ci-dessous pour accéder au formulaire de candidature.
-            Vous pourrez y renseigner vos informations et transmettre votre CV.
-          </p>
-          <div class="contact">
-            <p><b>Email :</b> infos.doritis@gmail.com</p>
-            <p><b>Téléphone :</b> +228 99 88 17 74</p>
-          </div>
-        </div>
-
-        <div class="application-card">
-          <div class="application-card-top">
-            <span class="mini-badge">POSTE OUVERT</span>
-            <h3>Assistante de Direction Bilingue</h3>
-            <p>Votre prochaine opportunité professionnelle peut commencer ici.</p>
-          </div>
-          <!-- REMPLACER LE LIEN CI-DESSOUS PAR TON LIEN GOOGLE FORMS -->
-          <a class="btn btn-primary full" href="https://forms.google.com/" target="_blank" rel="noopener">
-            Remplir le formulaire de candidature <span>→</span>
-          </a>
-          <p class="privacy">Vos informations sont utilisées uniquement dans le cadre du processus de recrutement.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <img src="assets/logo.svg" alt="NEAD_HOLDING">
-      <p>© 2026 NEAD_HOLDING — Offre de stage</p>
-      <a href="#accueil">Retour en haut ↑</a>
+    <div class="container">
+      <div><b>NEAD_HOLDING</b><br>Offre de stage — Assistante de Direction Bilingue</div>
+      <div>© 2026 NEAD_HOLDING — Tous droits réservés.</div>
     </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

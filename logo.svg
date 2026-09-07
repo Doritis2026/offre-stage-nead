@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">NEAD_HOLDING</title>
+  <desc id="desc">Logo NEAD_HOLDING bleu et orange</desc>
+  <rect width="1000" height="1000" fill="#ffffff"/>
+  <g fill="#122b86">
+    <path d="M125 115h160l390 500V115h160v770H675L285 385v500H125z"/>
+  </g>
+  <rect x="125" y="805" width="160" height="80" rx="8" fill="#ff5b00"/>
+  <text x="500" y="970" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="62" letter-spacing="12" fill="#122b86">NEAD_HOLDING</text>
+</svg>
